@@ -26,10 +26,10 @@ module Err
               if type.nil? && self[attribute]
                 t = textiled[attribute.to_s]
                 if t.nil?
-                  linked = auto_link(CGI.escapeHTML(self[attribute]), :all) do |txt|
-                    txt.size < 55 ? txt : truncate(txt, 50)
-                  end
-                  t = RedCloth.new(linked, Array(ruled[attribute])).to_html
+                  #linked = auto_link(CGI.escapeHTML(self[attribute]), :all) do |txt|
+                  #  txt.size < 55 ? txt : truncate(txt, 50)
+                  #end
+                  t = RedCloth.new(self[attribute], Array(ruled[attribute])).to_html
                   # preserve whitespace for haml
                   t = t.chomp("\n").gsub(/\n/, '&#x000A;').gsub(/\r/, '')
                   textiled[attribute.to_s] = t
