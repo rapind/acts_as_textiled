@@ -1,3 +1,8 @@
+This is a forked repository. All I did was to remove the autolinking which was breaking textile formatted links.
+
+I.e. "This is a link to Google":http://www.google.com
+
+
 = Acts as Textiled
 
 This simple plugin allows you to forget about constantly rendering Textile in 
